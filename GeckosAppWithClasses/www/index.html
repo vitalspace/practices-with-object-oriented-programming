@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geckos</title>
+  <script src="./geckos.io-client.2.2.1.min.js"></script>
+  <script src="https://cdn.tailwindcss.com/"></script>
+</head>
+
+<body>
+  <button id="button" class="px-4 py-2 text-white bg-green-400">Hello Server</button>
+  <div id="response"></div>
+  <script>
+    const App = {
+      channel: geckos({ url: "http://localhost:4000", port: null }),
+      Init: () => {
+        App.InitGeckos();
+        App.sayHelloToTheServer();
+        App.HearServer();
+      },
+      InitGeckos: () => {
+        App.channel.onConnect(error => {
+          if (error) console.log(error)
+        })
+      },
+      sayHelloToTheServer: () => {
+        const button = document.querySelector('#button')
+        button.addEventListener('click', () => {
+          App.channel.emit('helloServer');
+        })
+      },
+      HearServer: () => {
+        App.channel.on('response', (data) => {
+          document.querySelector('#response').innerHTML = data
+        })
+      }
+    }
+    App.Init();
+  </script>
+</body>
+
+</html>
