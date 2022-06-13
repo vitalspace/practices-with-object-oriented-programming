@@ -1,0 +1,22 @@
+{
+  "name": "practices-with-object-oriented-programming",
+  "version": "1.0.0",
+  "description": "practices with object-oriented programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitalspace/practices-with-object-oriented-programming.git"
+  },
+  "keywords": [
+    "poo"
+  ],
+  "author": "VitalSpace",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vitalspace/practices-with-object-oriented-programming/issues"
+  },
+  "homepage": "https://github.com/vitalspace/practices-with-object-oriented-programming#readme"
+}
